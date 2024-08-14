@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Futuristic Website</title>
+    <style>
+        /* Inline CSS for the entire website */
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #00264d, #004d99);
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+            animation: fadeIn 6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-bottom: 5px solid #FFD700;
+            position: relative;
+            overflow: hidden;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .flag {
+            width: 100%;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .saffron, .white, .green {
+            height: 33.33%;
+            animation: slideIn 1s ease forwards;
+        }
+
+        .saffron {
+            background-color: #FF9933;
+            animation-delay: 0.5s;
+        }
+
+        .white {
+            background-color: #FFFFFF;
+            position: relative;
+        }
+
+        .ashoka-chakra {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #000080;
+            border-radius: 50%;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, transparent 10px, #000080 10px, #000080 15px, transparent 15px);
+            animation: rotateChakra 5s linear infinite;
+        }
+
+        @keyframes rotateChakra {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .green {
+            background-color: #138808;
+            animation-delay: 2s;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 3.5em;
+            color: #FFD700;
+            animation: glowText 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowText {
+            from { text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700; }
+            to { text-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700; }
+        }
+
+        .content {
+            margin: 50px auto;
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+
+        p {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            animation: moveUp 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes moveUp {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+
+        button.learn-more {
+            background-color: #FFD700;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #1b1b1b;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            animation: floatButton 2s ease-in-out infinite alternate;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes floatButton {
+            from { transform: translateY(0); }
+            to { transform: translateY(-5px); }
+        }
+
+        button.learn-more:hover {
+            background-color: #FF9933;
+            color: white;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            width: 100%;
+            bottom: 0;
+            color: #FFD700;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background: url('https://images.unsplash.com/photo-1593642632780-7b43878e84a6') no-repeat center center fixed;
+            background-size: cover;
+            opacity: 0.5;
+            animation: backgroundPulse 5s ease-in-out infinite alternate;
+        }
+
+        @keyframes backgroundPulse {
+            from { opacity: 0.4; }
+            to { opacity: 0.6; }
+        }
+
+        /* Selfie Upload Section Styling */
+        .selfie-upload {
+            margin-top: 50px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #FFD700;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            animation: highlightSelfie 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes highlightSelfie {
+            from { transform: scale(1); border-color: #FFD700; }
+            to { transform: scale(1.05); border-color: #FF9933; }
+        }
+
+        .selfie-upload h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #FFD700;
+            text-shadow: 0 0 10px #FFD700;
+        }
+
+        .selfie-upload input[type="file"] {
+            background-color: #FFD700;
+            border: none;
+            padding: 10px 20px;
+            color: #1b1b1b;
+            cursor: pointer;
+            font-size: 1.1em;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        .selfie-upload input[type="file"]:hover {
+            background-color: #FF9933;
+            color: white;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        #selfiePreview {
+            display: none;
+            width: 300px;
+            height: auto;
+            border: 3px solid #FFD700;
+            margin-top: 20px;
+            border-radius: 15px;
+        }
+
+        .happy-message {
+            display: none;
+            font-size: 3em;
+            color: #FFD700;
+            margin-top: 20px;
+            animation: fadeInMessage 3s ease-in-out forwards;
+        }
+
+        @keyframes fadeInMessage {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Tricolor Background Animation */
+        .tricolor-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            display: none;
+        }
+
+        .tricolor-background .saffron {
+            background-color: #FF9933;
+            height: 33.33%;
+        }
+
+        .tricolor-background .white {
+            background-color: #FFFFFF;
+            height: 33.33%;
+        }
+
+        .tricolor-background .green {
+            background-color: #138808;
+            height: 33.33%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="background-animation"></div>
+        <div class="flag">
+            <div class="saffron"></div>
+            <div class="white">
+                <div class="ashoka-chakra"></div>
+            </div>
+            <div class="green"></div>
+        </div>
+        <h1>हर घर तिरंगा</h1>
+    </header>
+
+    <section class="content">
+        <h2>Satyameva Jayate</h2>
+        <p>India, a land of diversity and rich heritage, is moving forward with a blend of tradition and innovation.</p>
+        <button class="learn-more">Learn More</button>
+
+        <!-- Selfie Upload Section -->
+        <div class="selfie-upload">
+            <h3>Upload Your Selfie with Tiranga</h3>
+            <input type="file" accept="image/*" id="selfieInput">
+            <br><br>
+            <img id="selfiePreview">
+            <button id="submitSelfie">Submit</button>
+            <p class="happy-message" id="happyMessage">Happy Independence Day!</p>
+        </div>
+    </section>
+
+    <div class="tricolor-background" id="tricolorBackground">
+        <div class="saffron"></div>
+        <div class="white"></div>
+        <div class="green"></div>
+    </div>
+
+    <footer>
+        <p>&copy; Design by Tahir Asif</p>
+    </footer>
+
+    <script>
+        document.getElementById('selfieInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const preview = document.getElementById('selfiePreview');
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        });
+
+        document.getElementById('submitSelfie').addEventListener('click', function() {
+            document.getElementById('tricolorBackground').style.display = 'block';
+            document.getElementById('happyMessage').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
